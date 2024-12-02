@@ -11,7 +11,7 @@ const responseTimes = [];
 // const api = 'https://dolphin-app-hmkn4.ondigitalocean.app/'; // DigitalOcean professional-m
 // const api = 'http://157.90.19.212:8080/'; // hetzner CX21
 // const api = 'http://localhost:8080/'; // localhost if you run node-server/index.js
-const api = 'https://walrus-app-uunsq.ondigitalocean.app/';
+const api = "https://sea-lion-app-u9379.ondigitalocean.app/";
 
 async function job () {
   const pLimit = await import('p-limit');
