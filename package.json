@@ -1,0 +1,16 @@
+{
+  "name": "client-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "start:postgres": "node postgres.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "tabya GmbH",
+  "license": "MIT",
+  "dependencies": {
+    "p-limit": "5.0.0"
+  }
+}
