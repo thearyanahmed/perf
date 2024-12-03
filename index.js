@@ -4,14 +4,17 @@ const countRequests = 5000;
 const concurrentRequests = 500;
 
 // const endpoint = '';
-const endpoint = 'io';
-const responseTimes = [];
+let endpoint = '';
+let responseTimes = [];
 
-// const api = 'https://shark-app-edhvp.ondigitalocean.app/'; // DigitalOcean professional-xs
-// const api = 'https://dolphin-app-hmkn4.ondigitalocean.app/'; // DigitalOcean professional-m
-// const api = 'http://157.90.19.212:8080/'; // hetzner CX21
-// const api = 'http://localhost:8080/'; // localhost if you run node-server/index.js
-const api = "https://sea-lion-app-u9379.ondigitalocean.app/";
+let api = "";
+let args = process.argv.slice(2);
+
+if (args.length > 0) {
+  api = args[0];
+  endpoint = args[1];
+}
+
 
 async function job () {
   const pLimit = await import('p-limit');
