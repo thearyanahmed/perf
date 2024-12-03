@@ -43,7 +43,7 @@ async function job () {
   });
 
   const start = performance.now();
-  const res = await Promise.all(promises);
+  const res = await Promise.allSettled(promises);
   console.info(`All requests took ${performance.now() - start}ms`);
   let totalLen = 0;
   responseTimes.forEach(r => totalLen += r);
