@@ -1,4 +1,4 @@
-const countWarmupRequests = 0;
+const countWarmupRequests = 2000;
 
 const countRequests = 5000;
 const concurrentRequests = 500;
@@ -19,7 +19,7 @@ if (args.length > 0) {
 async function job () {
   const pLimit = await import('p-limit');
 
-  const warmupLimit = pLimit.default(100);
+  const warmupLimit = pLimit.default(countWarmupRequests);
   const warmupPromises = Array(countWarmupRequests).fill(0).map((data, index) => {
     return warmupLimit(async () => {
       const response = await fetch(api + endpoint + '?warmup=' + index);
