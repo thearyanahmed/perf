@@ -26,7 +26,7 @@ async function job () {
       return response.text();
     });
   });
-  await Promise.all(warmupPromises);
+  await Promise.allSettled(warmupPromises);
 
   const limit = pLimit.default(concurrentRequests);
 
